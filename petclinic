@@ -1,0 +1,6 @@
+RUN docker pull tomcat
+MAINTAINER xyz
+
+ADD /root/petclinic.war $CATALINA_HOMES/webapps/
+
+CMD ["catalina.sh", "run"]
