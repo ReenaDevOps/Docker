@@ -1,6 +1,7 @@
-RUN docker pull tomcat
+FROM tomcat
+
 MAINTAINER xyz
 
-ADD /root/petclinic.war $CATALINA_HOMES/webapps/
+ADD http://ec2-52-77-117-232.ap-southeast-1.compute.amazonaws.com:8080/job/AppForDocker/ws/target/petclinic.war /usr/local/tomcat/webapps/petclinic.war
 
 CMD ["catalina.sh", "run"]
